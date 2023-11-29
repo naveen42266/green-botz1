@@ -21,7 +21,7 @@ const App = () => {
   const [id, setId] = useState<string>('')
 
   useEffect(() => {
-    if (myData?.length == 0 || myData?.length == null) {
+    if (myData?.length === 0 || myData?.length === null) {
       const dummyDataArray = [];
 
       for (let i = 0; i < 10; i++) {
@@ -51,11 +51,11 @@ const App = () => {
   function handleApprove(id: string) {
     let arr = [] as any
     let details = myData
-    let data = myData?.find((ele) => ele?.id == id)
-    if (data?.status != "missing") {
-      data.status = data?.status == "approved" ? null : "approved"
+    let data = myData?.find((ele) => ele?.id === id)
+    if (data?.status !=="missing") {
+      data.status = data?.status === "approved" ? null : "approved"
       details?.forEach((each) => {
-        if (each?.id == id) {
+        if (each?.id === id) {
           arr?.push?.(data)
         }
         else {
@@ -70,11 +70,11 @@ const App = () => {
   function handleMissing() {
     let arr = [] as any
     let details = myData
-    let data = myData?.find((ele) => ele?.id == id)
-    if (data?.status != "approved") {
-      data.status = data.status == "missing" ? null : "missing"
+    let data = myData?.find((ele) => ele?.id === id)
+    if (data?.status !== "approved") {
+      data.status = data.status === "missing" ? null : "missing"
       details?.forEach((each) => {
-        if (each?.id == id) {
+        if (each?.id === id) {
           arr?.push?.(data)
         }
         else {

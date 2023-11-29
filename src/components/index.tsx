@@ -219,18 +219,18 @@ const ReecoComponent: React.FC<ReecoComponentProps> = ({ myData, id, handleAppro
                                     <div className='col-span-4 '>
                                         <div className='flex flex-col'>
                                             <div className='flex justify-between gap-3 bg-[#EEEEEE] h-20 w-full items-center pr-5'>
-                                                <div>{each?.status == "approved" ? (<div className='px-2 bg-[#39B54A] rounded-full ml-5'>Approved</div>) : each?.status == "missing" ? (<div className='px-2 bg-[#D83F31] rounded-full ml-5'>Missing</div>) : null}</div>
+                                                <div>{each?.status === "approved" ? (<div className='px-2 bg-[#39B54A] rounded-full ml-5'>Approved</div>) : each?.status === "missing" ? (<div className='px-2 bg-[#D83F31] rounded-full ml-5'>Missing</div>) : null}</div>
                                                 <div className='flex gap-3'>
-                                                    {each?.status == "approved" ? (
+                                                    {each?.status === "approved" ? (
                                                         <CheckIcon sx={{ color: "#39B54A" }} onClick={() => { handleApprove(each?.id) }} />
                                                     ) : (
                                                         <CheckIcon onClick={() => { handleApprove(each?.id) }} />
                                                     )}
 
-                                                    {each?.status == "missing" ? (
+                                                    {each?.status === "missing" ? (
                                                         <ClearIcon sx={{ color: "#D83F31" }} onClick={() => { setOpen(true); setId(each?.id); }} />
                                                     ) : (
-                                                        <ClearIcon onClick={() => { if (each?.status != "approved") setOpen(true); setId(each?.id); }} />
+                                                        <ClearIcon onClick={() => { if (each?.status !== "approved") setOpen(true); setId(each?.id); }} />
                                                     )}
                                                     <div onClick={() => { setEdit(true); setId(each?.id); }} >Edit</div>
                                                 </div>
