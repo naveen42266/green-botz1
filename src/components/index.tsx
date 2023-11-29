@@ -1,5 +1,5 @@
-import { Box, Modal, TextField, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import { Box, Modal, Typography } from '@mui/material';
+import React, {  useState } from 'react';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';

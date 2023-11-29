@@ -5,16 +5,6 @@ import { setDetails } from '../store/action/action';
 import { RootState } from '../store/reducer';
 import ReecoComponent from '../components';
 
-class SampleModel {
-  id: string | null = null
-  name: string | null = null
-  brand: string | null = null
-  price: number | null = null
-  quantity: number | null = null
-  total: number | null = null
-  status: "approved" | "missing" | null = null
-}
-
 const App = () => {
   const myData = useSelector((state: RootState) => state?.datas?.data);
   const dispatch = useDispatch()
